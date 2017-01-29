@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "07e858a0-ed46-11e6-8d97-9d607c296e53",
+    "_type": "visualization",
+    "_source": {
+      "title": "Unique Top 50 Contacts",
+      "visState": "{\"title\":\"Unique Top 50 Contacts\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"date.keyword\",\"customLabel\":\"Total Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"contact_name.keyword\",\"size\":50,\"orderAgg\":{\"id\":\"2-orderAgg\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"orderAgg\",\"params\":{\"field\":\"date.keyword\",\"customLabel\":\"\"}},\"order\":\"desc\",\"orderBy\":\"custom\",\"customLabel\":\"Contact\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":1,\"direction\":\"desc\"}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"smsbackuprestore-*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  }
+]

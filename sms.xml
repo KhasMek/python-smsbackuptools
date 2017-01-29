@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<?xml-stylesheet type="text/xsl" href="sms.xsl"?>
+<smses count="2">
+  <sms protocol="0" address="5555554455" date="1335046217074" type="1" subject="null" body="Sweetest soul I will ever meet. " toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="1335042614000" readable_date="Apr 21, 2012 4:10:17 PM" contact_name="Robot Dog" />
+  <sms protocol="0" address="5555554455" date="1335046709425" type="2" subject="null" body="Indeed. " toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="0" readable_date="Apr 21, 2012 4:18:29 PM" contact_name="Robot Dog" />
+  <sms protocol="0" address="(555) 555-4545" date="1335055568071" type="2" subject="null" body="Still in Portland? " toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="0" readable_date="Apr 21, 2012 6:46:08 PM" contact_name="Robot Cat" />
+  <sms protocol="0" address="5555554545" date="1335055619500" type="1" subject="null" body="Extended another week ya, too much work no time to travel" toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="1335052018000" readable_date="Apr 21, 2012 6:46:59 PM" contact_name="Robot Cat" />
+  <sms protocol="0" address="5555554545" date="1335055624272" type="1" subject="null" body="How you baby?" toa="null" sc_toa="null" service_center="null" read="1" status="-1" locked="0" date_sent="1335052023000" readable_date="Apr 21, 2012 6:47:04 PM" contact_name="Robot Cat" />
+  <sms protocol="0" address="5555555455" date="1485921084" type="1" subject="null" body="Whatup?" toa="null" sc_toa="null" service_center="null" read="1" status="32" locked="0" date_sent="0" readable_date="2017/01/31 20:51:24" contact_name="Human Person 2" />
+  <sms protocol="0" address="(555) 555-5555" date="1485921213" type="2" subject="null" body="Hello, how are you today?" toa="null" sc_toa="null" service_center="null" read="1" status="32" locked="0" date_sent="0" readable_date="2017/01/31 20:53:33" contact_name="Human Person" />
+  <sms protocol="0" address="1-555-555-5655" date="1485921084" type="1" subject="null" body="Beep boop" toa="null" sc_toa="null" service_center="null" read="1" status="32" locked="0" date_sent="0" readable_date="2017/02/01 01:11:16" contact_name="Robot Person" />
+  <sms protocol="0" address="5555555455" date="1485921084" type="2" subject="null" body="Boop Boop Beep?!" toa="null" sc_toa="null" service_center="null" read="1" status="32" locked="0" date_sent="0" readable_date="2017/02/01 04:39:55" contact_name="Human Person" />
+</smses>

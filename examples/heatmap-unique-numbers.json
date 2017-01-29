@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "77772060-ef40-11e6-a812-ddb6af4d8fac",
+    "_type": "visualization",
+    "_source": {
+      "title": "Unique Number Count",
+      "visState": "{\"title\":\"Unique Number Count\",\"type\":\"heatmap\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":10,\"colorSchema\":\"Blues\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":true,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"address.keyword\",\"size\":10,\"orderAgg\":{\"id\":\"2-orderAgg\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"orderAgg\",\"params\":{\"field\":\"readable_date\",\"customLabel\":\"\"}},\"order\":\"desc\",\"orderBy\":\"custom\",\"customLabel\":\"Number\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0% - 10%\":\"rgb(247,251,255)\",\"10% - 20%\":\"rgb(227,238,249)\",\"20% - 30%\":\"rgb(208,225,242)\",\"30% - 40%\":\"rgb(182,212,233)\",\"40% - 50%\":\"rgb(148,196,223)\",\"50% - 60%\":\"rgb(107,174,214)\",\"60% - 70%\":\"rgb(74,152,201)\",\"70% - 80%\":\"rgb(46,126,188)\",\"80% - 90%\":\"rgb(23,100,171)\",\"90% - 100%\":\"rgb(8,74,145)\"},\"legendOpen\":false}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"smsbackuprestore-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "62f97fe0-ed4a-11e6-896f-03591b103f36",
+    "_type": "visualization",
+    "_source": {
+      "title": "Unique Contacts",
+      "visState": "{\"title\":\"Unique Contacts\",\"type\":\"metric\",\"params\":{\"handleNoResults\":true,\"fontSize\":\"30\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"address.keyword\",\"customLabel\":\"Contacts\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"smsbackuprestore-*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]
