@@ -2,16 +2,18 @@
 
 import argparse
 import os
-from datetime import datetime
-from queue import Queue
-from smsbackuptools.dbs import SQLite
-from smsbackuptools.elasticsms import QueueUpload, Upload
-from smsbackuptools.parser import ParseXML
 import sys
+
 try:
     import xml.etree.cElementTree as ET
 except ImportError:
     import xml.etree.ElementTree as ET
+
+from datetime import datetime
+from queue import Queue
+from smsbackuptools.dbs import SQLite
+from smsbackuptools.elasticsms import QueueUpload
+from smsbackuptools.parser import ParseXML
 
 
 def main():
@@ -25,19 +27,19 @@ def main():
     argparser.add_argument('-s', '--sqlite', action='store_true')
     argparser.add_argument('-u', '--upload_threads', default="15")
     args = argparser.parse_args()
-    xml = (args.xml)
-    elastic = (args.elastic)
-    sqlite = (args.sqlite)
-    upload_threads = (args.upload_threads)
+    xml = args.xml
+    elastic = args.elastic
+    sqlite = args.sqlite
+    upload_threads = args.upload_threads
     try:
         tree = ET.parse(xml)
     except FileNotFoundError as err:
         print(err)
-        print("QUITTING!!!")
+        print("[!] QUITTING!!!")
         sys.exit(1)
     except:
         print("\"{f}\" is malformed or not an xml!!!".format(f=xml))
-        print("QUITTING!!!")
+        print("[!] QUITTING!!!")
         sys.exit(1)
     root = tree.getroot()
     if elastic:

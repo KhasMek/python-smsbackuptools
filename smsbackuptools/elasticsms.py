@@ -1,20 +1,18 @@
-#!/usr/bin/env python3
-
-from datetime import datetime
-from elasticsearch import Elasticsearch
 import pprint
 import socket
+
+from elasticsearch import Elasticsearch
 from threading import Thread
-import time
 
 
 class QueueUpload(Thread):
-   def __init__(self, queue):
-       Thread.__init__(self)
-       self.queue = queue
 
-   def run(self):
-       while True:
+    def __init__(self, queue):
+        Thread.__init__(self)
+        self.queue = queue
+
+    def run(self):
+        while True:
             message = self.queue.get()
             upload = Upload
             try:
@@ -24,8 +22,10 @@ class QueueUpload(Thread):
                 pass
             self.queue.task_done()
 
+
 class Upload():
     """ Upload class for elastic """
+
     def __init__(self, message_type, message):
         elastic_host = "localhost"
         elastic_port = "9200"

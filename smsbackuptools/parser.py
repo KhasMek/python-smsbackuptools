@@ -1,8 +1,7 @@
-#!/usr/bin/env python3
-
-from dateutil.parser import parse
 import phonenumbers
 import re
+
+from dateutil.parser import parse
 
 
 class ParseXML():
