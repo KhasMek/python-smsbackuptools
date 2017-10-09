@@ -6,16 +6,18 @@ from dateutil.parser import parse
 
 class ParseXML():
 
-    def printall(self, root):
+    def print_all(self, root):
         for message in root:
-            self.printmessage(message)
+            self.print_message(message)
 
-    def printmessage(self, message):
+    @staticmethod
+    def print_message(message):
         for attrib in message.attrib:
             print("{a}: {v}".format(a=attrib.upper(), v=message.attrib[attrib]))
         print("\n")
 
-    def standarizenumber(self, number):
+    @staticmethod
+    def standardize_number(number):
         try:
             if len(re.sub('[()\-+ "]', '', number)) == 10:
                 # Assume USA is the country code. Sorry rest of the world. :/
@@ -27,12 +29,13 @@ class ParseXML():
         except phonenumbers.NumberParseException as npe:
             print(npe)
 
-    def standardizedate(self, _date):
+    @staticmethod
+    def standardize_date(_date):
         """ Return the date in yyyy/mm/dd HH:MM:SS format """
         _date = parse(_date)
         return _date.strftime('%Y/%m/%d %H:%M:%S')
 
-    def humanreadable(self, message):
+    def human_readable(self, message):
         """ Return the data in a more human readable way """
         try:
             if message.attrib["type"] == "1":
@@ -63,11 +66,11 @@ class ParseXML():
                 return
         # try/pass here in case the mms doesn't have a number attached (it happens).
         try:
-            prettynumber = self.standarizenumber(message.attrib["address"])
-            message.set("address", prettynumber)
+            pretty_number = self.standardize_number(message.attrib["address"])
+            message.set("address", pretty_number)
         except KeyError as err:
             print("ERROR!! {e}".format(e=err))
             print(message.attrib)
-        prettydate = self.standardizedate(message.attrib["readable_date"])
-        message.set("readable_date", prettydate)
+        pretty_date = self.standardize_date(message.attrib["readable_date"])
+        message.set("readable_date", pretty_date)
         return message

@@ -32,7 +32,8 @@ class Upload():
         index_name = "smsbackuprestore-"
         self.upload(elastic_host, elastic_port, index_name, message_type, message)
 
-    def upload(self, elastic_host, elastic_port, index_name, message_type, message):
+    @staticmethod
+    def upload(elastic_host, elastic_port, index_name, message_type, message):
         es = Elasticsearch(host=elastic_host, port=elastic_port)
         pp = pprint.PrettyPrinter(indent=2, width=80, compact=True)
         create_body = es.index(index=index_name, doc_type=message_type, body=message)

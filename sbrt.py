@@ -50,7 +50,7 @@ def main():
             worker.daemon = True
             worker.start()
         for message in root:
-            message = parsexml.humanreadable(message)
+            message = parsexml.human_readable(message)
             if message is not None:
                 queue.put(message)
         queue.join()
@@ -60,11 +60,11 @@ def main():
             print("[I] DATABASE DOESN'T EXIST, CREATING...\n")
             sqlite.create_tables()
         for message in root:
-            message = parsexml.humanreadable(message)
+            message = parsexml.human_readable(message)
             sqlite.insert_row(message)
             sqlite.commit_db()
     else:
-        parsexml.printall(root)
+        parsexml.print_all(root)
     end_time = datetime.now()
     print("[I] END TIME: {t}".format(t=end_time))
     print("[I] TOOK {t}".format(t=end_time - start_time))
