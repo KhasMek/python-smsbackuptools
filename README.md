@@ -31,6 +31,7 @@ To run with the default settings (using sms.xml as the source file, and printing
 | -x         | --xml            | sms.xml       | define an xml file to interact with                      |
 | -e         | --elastic        | n/a           | upload to Elasticsearch                                  |
 | -u         | --upload_threads | 15            | number of thread to use while uploading to Elasticsearch |
+| -s         | --sqlite         | n/a           | create/update a sqlite database located at `./sbrt.db`   |
 
 To upload my-sms.xml to a local Elasticsearch instance while saving the output to output.txt
 ```bash
