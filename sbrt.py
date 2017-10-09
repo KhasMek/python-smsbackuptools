@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 import argparse
+import os
 from datetime import datetime
 from queue import Queue
+from smsbackuptools.dbs import SQLite
 from smsbackuptools.elasticsms import QueueUpload, Upload
 from smsbackuptools.parser import ParseXML
 import sys
@@ -20,10 +22,12 @@ def main():
     argparser = argparse.ArgumentParser()
     argparser.add_argument('-x', '--xml', default="sms.xml")
     argparser.add_argument('-e', '--elastic', action='store_true')
+    argparser.add_argument('-s', '--sqlite', action='store_true')
     argparser.add_argument('-u', '--upload_threads', default="15")
     args = argparser.parse_args()
     xml = (args.xml)
     elastic = (args.elastic)
+    sqlite = (args.sqlite)
     upload_threads = (args.upload_threads)
     try:
         tree = ET.parse(xml)
@@ -38,7 +42,6 @@ def main():
     root = tree.getroot()
     if elastic:
         queueupload = QueueUpload
-        upload = Upload
         queue = Queue()
         for x in range(int(upload_threads)):
             worker = queueupload(queue)
@@ -49,6 +52,15 @@ def main():
             if message is not None:
                 queue.put(message)
         queue.join()
+    if sqlite:
+        sqlite = SQLite()
+        if os.stat("sbrt.db").st_size == 0:
+            print("[I] DATABASE DOESN'T EXIST, CREATING...\n")
+            sqlite.create_tables()
+        for message in root:
+            message = parsexml.humanreadable(message)
+            sqlite.insert_row(message)
+            sqlite.commit_db()
     else:
         parsexml.printall(root)
     end_time = datetime.now()
